@@ -81,7 +81,7 @@ st.markdown("""
 </style>            
 """, unsafe_allow_html=True)
 
-t = "<div class='center'> | Confirmed : <span class='highlight blue bold'>" + str(confirmed_total) + "</span> | Active : <span class='highlight yellow bold'>"+ str(active_total) +"</span> | Deaths : <span class='highlight red bold'>"+ str(deaths_total) +"</span> | Recovered : <span class='highlight green bold'>"+ str(recovered_total) +"</span> |</div><br><br>"
+t = "<div class='center'> | Confirmed : <span class='highlight blue bold'>" + str(confirmed_total) + "</span> | Deaths : <span class='highlight red bold'>"+ str(deaths_total) +"</span> |</div><br><br>"
 st.markdown(t, unsafe_allow_html=True)
 
 #####################################################################################
