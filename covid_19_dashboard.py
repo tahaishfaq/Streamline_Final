@@ -13,12 +13,6 @@ from plotly.subplots import make_subplots
 from streamlit_folium import folium_static
 
 
-st.beta_set_page_config(
-page_title="Covid-19 Dashboard",
-#page_icon=":microbe:",
-layout="centered",
-#initial_sidebar_state="expanded",
-)
 
 # Read the data
 confirmed_df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv')
