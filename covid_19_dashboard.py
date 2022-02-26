@@ -238,7 +238,7 @@ breakline()
 st.markdown("<h2 style='text-align: center; color: black; background-color:crimson'>Countries with most number of cases</h2>",
             unsafe_allow_html=True)
 type_of_case = st.selectbox('Select type of case : ', 
-                            ['Confirmed', 'Active', 'Deaths', 'Recovered'],
+                            ['Confirmed', 'Deaths'],
                             key = 'most_cases')
 selected_count = st.slider('No. of countries :', 
                            min_value=1, max_value=50, 
@@ -263,7 +263,7 @@ breakline()
 st.markdown("<h2 style='text-align: center; color: black; background-color:crimson'>Countries with least number of cases</h2>",
             unsafe_allow_html=True)
 type_of_case = st.selectbox('Select type of case : ', 
-                            ['Confirmed', 'Active', 'Deaths', 'Recovered'],
+                            ['Confirmed', 'Deaths'],
                             key = 'least_cases')
 selected_count = st.slider('No. of countries :', 
                            min_value=1, max_value=50, 
@@ -586,29 +586,4 @@ else:
 ##########################################################################
 
 
-########################### World Map View ###########################
-breakline()
-st.markdown("<h2 style='text-align: center; color: black; background-color:crimson'>World Map View</h2>",
-            unsafe_allow_html=True)
-world_map = folium.Map(location=[11,0], tiles="cartodbpositron", zoom_start=2, max_zoom = 6, min_zoom = 2)
-for i in range(0,len(confirmed_df)):
-    folium.Circle(
-        location=[confirmed_df.iloc[i]['Lat'], confirmed_df.iloc[i]['Long']],
-        fill=True,
-        radius=(int((np.log(confirmed_df.iloc[i,-1]+1.00001)))+0.2)*50000,
-        color='red',
-        fill_color='indigo',
-        tooltip = "<div style='margin: 0; background-color: black; color: white;'>"+
-                    "<h4 style='text-align:center;font-weight: bold'>"+confirmed_df.iloc[i]['Country/Region'] + "</h4>"
-                    "<hr style='margin:10px;color: white;'>"+
-                    "<ul style='color: white;;list-style-type:circle;align-item:left;padding-left:20px;padding-right:20px'>"+
-                        "<li>Confirmed: "+str(confirmed_df.iloc[i,-1])+"</li>"+
-                        "<li>Deaths:   "+str(death_df.iloc[i,-1])+"</li>"+
-                        "<li>Death Rate: "+ str(np.round(death_df.iloc[i,-1]/(confirmed_df.iloc[i,-1]+1.00001)*100,2))+ "</li>"+
-                    "</ul></div>",
-        ).add_to(world_map)
 
-folium_static(world_map)
-#################################################################################
-breakline()
-st.markdown("<h4 style='text-align: center; color: black;'><i>This dashboard is made and maintained with ❤️ by Sarthak Rana</i></h4>", unsafe_allow_html=True)
