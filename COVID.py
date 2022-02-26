@@ -87,15 +87,7 @@ st.markdown(t, unsafe_allow_html=True)
 #####################################################################################
 
 
-################################### What is Covid ###################################
-breakline()
-st.markdown("<h2 style='text-align: center; color: black; background-color:crimson'>What is Coronavirus?</h2>",
-            unsafe_allow_html=True)
-st.image("https://www.apta.com/wp-content/uploads/home-banner-1.jpg", use_column_width=True)
-st.write("Coronaviruses or Covid-19 are a large family of viruses that may cause respiratory illnesses in humans ranging from common colds to more severe conditions such as Severe Acute Respiratory Syndrome (SARS) and Middle Eastern Respiratory Syndrome (MERS).")
-st.write("• 'Novel coronavirus' is a new, previously unidentified strain of coronavirus.")
-st.write("• The novel coronavirus involved in the current outbreak has been named SARS-CoV-2 by the World Health Organization (WHO).")
-st.write("• The disease it causes has been named “coronavirus disease 2019” (or “COVID-19”).`")
+
 #####################################################################################
 
 
